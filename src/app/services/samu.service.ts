@@ -10,11 +10,11 @@ export class SamuService {
     return VALORES;
   }
   GetMedia(id: number): number {
-     let x : number;
+     let x : number = 0;
      let anos: number = 0;
       for(let i of VALORES){
           if (i.uf_id == id){
-             x+= i.valor;
+             x += i.valor;
              anos++;
           }
 
