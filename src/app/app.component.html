@@ -1,10 +1,10 @@
 <!--The whole content below can be removed with the new code.-->
 <div style="text-align:center" class="title">
   <h1>{{uf.nome}}</h1>
-  <h2>{{uf.id}}</h2>
-  <h2>{{uf.area}}</h2>
-  <h2>{{media}}</h2>
+  <h2><b>ID:</b>{{uf.id}}</h2>
+  <h2><b>ÁREA:</b>{{uf.area}}</h2>
+  <h2><b>MÉDIA:</b>{{media}}</h2>
   <li *ngFor="let y of dados_anos">
-  {{y.ano}} {{y.valor}}
+<b>ANO:</b>  {{y.ano}} <br><b>MUNICÍPIOS ATENDIDOS: </b>{{y.valor}}<br><br>
 </li>
 </div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import { Dados } from '../types/samu';
+import { UF } from '../types/uf';
 import { VALORES } from './mock-samu_municipios_atendidos_por_estado';
 
 @Injectable()
@@ -21,11 +22,11 @@ export class SamuService {
       }
       return x/anos;
   }
-  GetDados(id: number): Dados[] {
+  GetDados(uf: UF): Dados[] {
      let dados: Dados[] = [];
      let x: number = 0;
       for(let i of VALORES){
-          if (i.uf_id == id){
+          if (i.uf_id == uf.id){
              dados[x] = i;
              x++;
           }
