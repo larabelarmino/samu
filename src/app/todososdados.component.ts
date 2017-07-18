@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 
 import {UF} from './types/uf';
@@ -9,12 +8,10 @@ import {SamuService} from './services/samu.service'
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  
+  templateUrl: './todososdados.component.html',
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit {
-    title = 'app';
+export class todososdadosComponent implements OnInit {
     id = 28;
     media: number;
     uf: UF;
