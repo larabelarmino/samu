@@ -7,6 +7,8 @@ import { RouterModule }   from '@angular/router';
 import { resumoComponent } from './resumo.component';
 import { dadosdaufComponent } from './dadosdauf.component';
 import { todososdadosComponent } from './todososdados.component';
+import {ModeloNovoService} from './services/modelonovo.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +34,7 @@ import { todososdadosComponent } from './todososdados.component';
 
 ])
   ],
-  providers: [UFService, SamuService],
+  providers: [UFService, SamuService, ModeloNovoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

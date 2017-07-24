@@ -1,10 +1,6 @@
-<!--The whole content below can be removed with the new code.-->
 <div style="text-align:center" class="title">
-
-  <h2><b>ID:</b>{{uf.id}}</h2>
-  <h2><b>ÁREA:</b>{{uf.area}}</h2>
-  <h2><b>MÉDIA:</b>{{media}}</h2>
-  <li *ngFor="let y of dados_anos">
-<b>ANO:</b>  {{y.ano}} <b>MUNICÍPIOS ATENDIDOS: </b>{{y.valor}}<br><br>
+<br><br>
+<li *ngFor="let atend of dados">
+<b>  UF: </b> {{atend.uf.nome}} <b>Ano:</b> {{atend.ano}}  <b>Municípios atendidos:</b> {{atend.valor}} <br><br>
 </li>
 </div>
