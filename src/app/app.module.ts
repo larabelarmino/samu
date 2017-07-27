@@ -7,7 +7,10 @@ import { RouterModule }   from '@angular/router';
 import { resumoComponent } from './resumo.component';
 import { dadosdaufComponent } from './dadosdauf.component';
 import { todososdadosComponent } from './todososdados.component';
-import {ModeloNovoService} from './services/modelonovo.service'
+import {ModeloNovoService} from './services/modelonovo.service';
+import { HttpModule }    from '@angular/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './in-memory-data.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import {ModeloNovoService} from './services/modelonovo.service'
   ],
   imports: [
     BrowserModule,
+    HttpModule,
+    InMemoryWebApiModule.forRoot(InMemoryDataService),
     RouterModule.forRoot([
+
   {
     path: 'resumo',
     component: resumoComponent

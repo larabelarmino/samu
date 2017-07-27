@@ -29,7 +29,7 @@ export class todososdadosComponent implements OnInit {
 
     ngOnInit(): void {
         this.ufs = this.ufService.getAll();
-        this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
+        this.samuService.getAllMunicipiosAtendidosPorEstado().then(dados_da_samu=> this.dados_da_samu = dados_da_samu);
         this.uf = this.ufService.GetUf(this.id);
         this.media = this.samuService.GetMedia(this.id);
         this.dados_anos = this.samuService.GetDados(this.uf);
