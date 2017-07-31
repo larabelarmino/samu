@@ -12,7 +12,7 @@ export class ModeloNovoService {
 
 constructor(private ufService: UFService) { }
 
-  mesclardados(): DadoNome[]{
+  mesclardados(): Promise<DadoNome[]>{
     let dados_finais: DadoNome[] = [];
     let i: number;
     i = 0;
@@ -21,14 +21,19 @@ constructor(private ufService: UFService) { }
       if (uf1.uf_id < uf2.uf_id) return -1;
       return 0;
     });
-
     todos.forEach((item) => {
-      let dado : DadoNome = new DadoNome();
-      dado.ano = item.ano;
-      dado.valor = item.valor;
-      dado.uf = this.ufService.GetUf(item.uf_id);
-      dados_finais.push(dado);
+      this.ufService.GetUf(item.uf_id).then((uf)=>{
+        dados_finais.push(dado_novo(item.ano, item.valor, uf));
     });
-    return dados_finais;
+    });
+    return Promise.resolve(dados_finais);
   }
+}
+function dado_novo (ano:number, valor:number, uf:UF) {
+
+  let dado : DadoNome = new DadoNome();
+  dado.ano = ano;
+  dado.valor = valor;
+  dado.uf = uf;
+  return dado;
 }

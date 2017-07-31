@@ -13,19 +13,16 @@ import {SamuService} from './services/samu.service'
 })
 export class dadosdaufComponent implements OnInit {
     id = 28;
-    media: number;
     uf: UF;
-    ufs : UF[];
-    dados_da_samu : Dados[];
     dados_anos: Dados[];
 
     constructor(private ufService: UFService, private samuService: SamuService)
     { }
 
     ngOnInit(): void {
-        this.ufs = this.ufService.getAll();
-        //this.dados_da_samu = this.samuService.getAllMunicipiosAtendidosPorEstado();
-        this.uf = this.ufService.GetUf(this.id);
-        this.dados_anos = this.samuService.GetDados(this.uf);
-    }
+        this.ufService.GetUf(this.id).then((uf)=> {
+          this.uf = uf;
+          this.samuService.GetDados(this.uf).then(dados_anos => this.dados_anos = dados_anos);
+        });
+      }
 }

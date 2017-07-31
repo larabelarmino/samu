@@ -22,7 +22,7 @@ export class SamuService {
   console.error('An error occurred', error); // for demo purposes only
   return Promise.reject(error.message || error);
 }
-  GetMedia(id: number): number {
+  GetMedia(id: number): Promise<number> {
      let x : number = 0;
      let anos: number = 0;
       for(let i of VALORES){
@@ -32,9 +32,9 @@ export class SamuService {
           }
 
       }
-      return x/anos;
+      return Promise.resolve(x/anos);
   }
-  GetDados(uf: UF): Dados[] {
+  GetDados(uf: UF): Promise<Dados[]> {
      let dados: Dados[] = [];
      let x: number = 0;
       for(let i of VALORES){
@@ -44,6 +44,6 @@ export class SamuService {
           }
 
       }
-      return dados;
+      return Promise.resolve(dados);
   }
 }

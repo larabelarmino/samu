@@ -23,8 +23,7 @@ export class resumoComponent implements OnInit {
     { }
 
     ngOnInit(): void {
-        this.ufs = this.ufService.getAll();
-        this.uf = this.ufService.GetUf(this.id);
-        this.media = this.samuService.GetMedia(this.id);
+      this.ufService.GetUf(this.id).then(uf => this.uf = uf);
+      this.samuService.GetMedia(this.id).then(media => this.media = media);;
     }
 }
