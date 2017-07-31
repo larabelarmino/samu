@@ -1,5 +1,5 @@
 # SAMU Avaliação prática de TII-POS
-ENDEREÇO: https://samu-larabelarmino.herokuapp.com/todososdados
+ENDEREÇO: https://samu-larabelarmino.herokuapp.com
 
 ## Objetivo
 
