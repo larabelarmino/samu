@@ -1,5 +1,5 @@
 
-import {UF} from '../types/uf';
+/* import {UF} from '../types/uf';
 
 export const UFs : UF[] = [
     {id: 11, nome: "Rondônia", area: 237765.376},
@@ -29,4 +29,4 @@ export const UFs : UF[] = [
     {id: 51, nome: "Mato Grosso", area: 903198.091},
     {id: 52, nome: "Goiás", area: 340110.385},
     {id: 53, nome: "Distrito Federal", area: 5779.999}
-];
+];*/
